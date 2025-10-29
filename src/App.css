@@ -1,0 +1,172 @@
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.container {
+  background-color: #3a3f47;
+  width: 200vh;
+  min-height: 100px;
+  margin: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.container-contador {
+  background-color: #3a3f47;
+  width: 90vh;
+  min-height: 70px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column; /* 🔹 Imagen arriba, botones abajo */
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+
+/* 🔹 Fila que contiene los tres botones */
+.fila-botones {
+  display: flex;
+  flex-direction: row; /* 🔹 En una sola fila */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espacio entre botones */
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Si la pantalla es pequeña, no se salen */
+}
+
+/* ====== BOTONES (MENÚ SUPERIOR) ====== */
+.menu {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #3a3f47;
+  color: white;
+}
+
+.menu button:hover {
+  background-color: bisque;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.menu button.active {
+  background-color: gainsboro;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* ====== CONTENIDO DE LAS PÁGINAS ====== */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ====== PÁGINA CONTADOR ====== */
+.contador-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  width: 100%;
+  background: linear-gradient(135deg, #3a3f47, #f107a3);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.contador-page img{
+  display: flex;
+  width: 45%;
+  height: 45%;
+  padding: 3%;
+}
+
+/* ====== BOTÓN DEL CONTADOR ====== */
+.btn-contador {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  margin-left: 3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-contador.pausar {
+  background-color: darkslategray; /* 🔴 Rojo cuando está corriendo */
+}
+
+.btn-contador.reanudar {
+  background-color: ghostwhite; /* 🟢 Verde cuando está pausado */
+  color: #000;
+}
+
+.btn-contador:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ====== ANIMACIÓN ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVIDAD ====== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .contador-page {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .btn-contador {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
